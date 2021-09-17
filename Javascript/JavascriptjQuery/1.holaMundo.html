@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        var nombre  = 'Jireh'
+        console.log('Hola '+nombre);
+
+        //Falsy Values en Javascript
+
+        /*  Es importante no confundir los valores booleanos primitivos con los valores del objeto booleano.
+            Cualquier objeto cuyo valor no es undefined o null, incluyendo los Boolean Object cuyo valor es false, 
+            se evalúan como true cuando son comparados con otro término. Esto queda más claro con un ejemplo: */
+        x = new Boolean(false); // Boolean Object
+        if( x )
+            document.write('La funcion se cumplio, dio : '+x);
+        else
+            document.write('La funcion se cumplio, dio : '+x +"\n");
+        
+        // Este comportamiento, sin embargo, no se aplica a la primitiva boolenana:
+        x = false; // Primitive boolean values
+        if( x )
+            document.write('---  se cumplio  '+x);
+        else
+            document.write('\n---- no se cumplio '+x);
+
+        // La condición no se cumple porque x aunque se ha definido
+        // posée un valor falsy
+
+
+        var a = 0; // (cero) -> Number
+        var b = NaN; // (Not a Number) -> Number
+        var c = ""; // (cadena vacía) -> String
+        var d = false; // -> Boolean
+        var e = null; // -> Object
+        var f = undefined; // -> Undefined
+        // comparacion
+
+        var a = false;
+        var b = 0;
+        var c = "";
+        console.log( a == b ); // true
+        console.log( b == c ); // true
+        console.log( a == c ); // true
+
+
+        /* Los valores null y undefined no mantienen equivalencia con ningún 
+        otro valor salvo con ellos mismos: */
+
+        console.log( false == null ); // false
+        console.log( false == undefined ); // false
+        console.log( null == null ); // true
+        console.log( undefined == undefined ); // true
+
+        console.log( NaN == null ); // false
+        console.log( NaN == false ); // false
+        console.log( NaN == NaN ); // false
+
+        console.log( typeof NaN ); // Number
+    </script>
+</body>
+</html>

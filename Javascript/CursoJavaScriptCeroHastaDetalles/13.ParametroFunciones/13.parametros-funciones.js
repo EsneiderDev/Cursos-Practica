@@ -1,4 +1,4 @@
-
+console.log('----------VALORES PRIMITIVOS POR PARAMETRO--------------');
 /* function imprimir( nombre) {
     console.log( nombre );
 }
@@ -32,20 +32,19 @@ function imprimir( nombre, apellido) {
 // PODEMOS MANDAR OBJETOS ANONIMOS
 console.log('----------UNA OBJETO POR PARAMETRO--------------');
 
-/* function imprimir( persona ) { 
+function imprimirObj( persona ) { 
     console.log( persona ); // {nombre: 'Nanc', apellido: 'Padilla'}
     console.log( persona.nombre + " " + persona.apellido); // Manuel Hoz
 }
 
-imprimir( {
+console.log('-- Anonimas --');
+imprimirObj( {
     nombre: "Manuel",
     apellido: "Hoz"
-} ); */
+} ); 
 // Objeto anonimo
 
-
-
-function imprimir( persona ) { 
+function imprimirObjDos( persona ) { 
     console.log( persona ); // {nombre: 'Nanc', apellido: 'Padilla'}
     console.log( persona.nombre + " " + persona.apellido); // Manuel Hoz
 
@@ -57,8 +56,8 @@ var obj = {
     nombre: "Esneider",
     apellido: "Buelvas"
 }
-
-imprimir(obj);
+console.log('-- No Anonimas --');
+imprimirObjDos(obj);
 
 console.log( obj.nombre ); // Andres
 console.log( obj ); // {nombre: 'Andres', apellido: 'Buelvas'}

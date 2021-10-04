@@ -33,11 +33,11 @@ function imprimir( nombre, apellido) {
 console.log('----------UNA OBJETO POR PARAMETRO--------------');
 
 function imprimirObj( persona ) { 
-    console.log( persona ); // {nombre: 'Nanc', apellido: 'Padilla'}
+    console.log( persona ); // {nombre: 'Manuel', apellido: 'Hoz'}
     console.log( persona.nombre + " " + persona.apellido); // Manuel Hoz
 }
 
-console.log('-- Anonimas --');
+console.log('-- objeto Anonimas --');
 imprimirObj( {
     nombre: "Manuel",
     apellido: "Hoz"
@@ -45,8 +45,8 @@ imprimirObj( {
 // Objeto anonimo
 
 function imprimirObjDos( persona ) { 
-    console.log( persona ); // {nombre: 'Nanc', apellido: 'Padilla'}
-    console.log( persona.nombre + " " + persona.apellido); // Manuel Hoz
+    console.log( 'persona: ', persona ); // {nombre: 'Esneider', apellido: 'Buelvas'}
+    console.log('nombre: '+ persona.nombre + " apellido: " + persona.apellido); // Manuel Hoz
 
     persona.nombre = "Andres";
 }
@@ -56,7 +56,8 @@ var obj = {
     nombre: "Esneider",
     apellido: "Buelvas"
 }
-console.log('-- No Anonimas --');
+
+console.log('-- objeto No Anonimas --');
 imprimirObjDos(obj);
 
 console.log( obj.nombre ); // Andres
@@ -77,13 +78,13 @@ var persona2 = {
     apellido: "Duglas"
 }
 
-console.log('-- Anonimas --');
+console.log('-- funcion Anonimas --');
 imprimir2( function () { 
     console.log("Argumento Funcion anonima");
 });
 
 
-console.log('-- No Anonimas --');
+console.log('-- funcion No Anonimas --');
 var miFuncion = function () {
     console.log("Argumento Funcion no anonima");
 }

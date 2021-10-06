@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../css/bootstrap v4.4.1.min.css"/>
+	<title>Columnas Alineadas Horizontalmente</title>
+	<style>
+        .row{
+            background: #ebebeb;
+            margin-top: 50px;
+            margin-bottom: 40px; 
+        }
+        .columna{
+            background: #fefefe;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #4d5061;
+        }
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+        
+        <div class="row">
+            <div class="columna col-auto offset-1">Columna</div>
+        </div>
+
+        <div class="row">
+            <div class="columna col-4 offset-4">Columna</div>
+        </div>
+
+        <div class="row">
+            <div class="columna col-auto offset-1">Columna</div>
+            <div class="columna col-auto offset-1">Columna</div>
+        </div>
+
+        <div class="row">
+            <div class="columna col-auto offset-1 offset-md-4 offset-lg-0">Columna</div>
+        </div>
+
+	</div>
+	
+	<script src="../js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../js/bootstrap v4.4.1.min.js"></script>
+</body>
+</html>

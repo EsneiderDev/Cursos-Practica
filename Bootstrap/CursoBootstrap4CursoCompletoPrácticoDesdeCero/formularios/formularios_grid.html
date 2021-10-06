@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"> <!-- , maximum-scale=1.0, minimun-scale=1.0 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularios Grid</title>
+    <link rel="stylesheet" href="../css/bootstrap v4.4.1.min.css"/>
+</head>
+<body>
+    <!-- Las filas (row) son grupos HORIZONTALES de columnas
+             Todos el contenido debe ir dentro de las columnas (col)
+             Y las columnas deben ir directamente dentro de la filas (row)-->
+
+        <!--NUEVO:
+        
+            .col        Automatico                                           Depende del objeto o componente
+            .col-xs     Extra Pequeño(Extra Small) - Smartphone  Vertical    Menor de 576pxm
+            .col-sm     Pequeño(Small) - Smartphone  Vertical                Mas de 576px y menos de 768px
+            .col-md     Mediano(Medium) - Tabletas                           Mas de 768px y menos de 992px
+            .col-lg     Largo(Largue) - Computadoras                         Mas de 992px y menos de 1200px
+            .col-xl     Extra Largo(Extra Largue) - Computadoras             Mas de 1200px                   -->
+
+    <div class="container-fluid">
+
+        <div class="row mt-3">
+            <div class="col">
+                <form action="">
+
+                    <div class="form-group row"><!--Regla de bootstrap dentro de las filas tenemos que tener columnas-->
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre"id="contraseña">  
+                        </div>
+                        <div class="col-12 col-md-6 mb-1">
+                            <label for="pass">Contraseña</label>
+                            <input type="password" class="form-control" placeholder="Contraseña" name="pass" id="contraseña">
+                        </div>
+                    </div>  
+                    <!-- No hay necesidad de colocarle que sea de 12 columnas de md hacia abajo, porque ya los coloca por defecto. -->
+                    <div class="form-group row">
+                        <div class="col-md-6 mb-3">
+                            <label for="contraseña">Mensaje</label>
+                            <textarea class="form-control" placeholder="Contraseña" name="mensaje" id="mensaje"></textarea>
+                        </div>  
+
+                        <div class="col-md-3 mb-1">
+                            <label>Sexo</label>
+                            <div class="form-check">
+                                <label for="form-check-label">
+                                    <input type="radio" name="sexo" id="nombre" class="form-check-input">Hombre
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label for="form-check-label">
+                                    <input type="radio" name="sexo" id="mujer" class="form-check-input">Mujer
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3 mb-3">
+                            <label for="pais">Pais</label>
+                            <select name="pais" id="pais" class="form-control">
+                                <option value="mexico">Mexico</option>
+                                <option value="españa">España</option>
+                                <option value="colombia">Colombia</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group row mt-2">
+                        <div class="col-12 text-center">
+                            <label for="form-check-label">
+                                <input type="checkbox" name="sexo" id="mujer" class="form-check-input">Acepto terminos y condiciones
+                            </label>    
+                            <div class="row justify-content-center mt-2 ">
+                                <div class="col-12 col-sm-9 col-md-4">
+                                    <button class="btn btn-primary btn-block" type="submit">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../js/bootstrap v4.4.1.min.js"></script>
+</body>
+</html>

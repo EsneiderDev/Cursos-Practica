@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"> <!-- , maximum-scale=1.0, minimun-scale=1.0 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap v4.4.1.min.css"/>
+    <title>Plantilla</title>
+    <style>
+        .columna{
+            background: #2191fb;
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Este es la forma como se hace en Bootstrap v4.0.0, esta forma esta obsoleta
+
+        <div class="row">
+            <div class="columna hidden-xl-down col">
+                <h1>Columna 0.0</h1>
+            </div>
+        </div> -->
+
+
+        <!-- Este es la nueva forma como se hace en Bootstrap v4.4.1-->
+       
+
+        <div class="row">
+            <div class="columna d-none d-sm-block col">Hidden only on xs</div>
+            <div class="columna d-none d-md-block col">Hidden only on sm</div>
+            <div class="columna d-none d-lg-block col">Hidden only on md</div>
+            <div class="columna d-none d-xl-block col">Hidden only on lg</div>
+            <div class="columna d-xl-none col">Hidden only on xl</div>            
+        </div>
+
+        <div class="row">
+            <div class="columna d-block d-sm-none col">XS - Extra Small</div>
+            <div class="columna d-none d-sm-block d-md-none col">SM - Small</div>
+            <div class="columna d-none d-md-block d-lg-none col">MD - Medium</div>
+            <div class="columna d-none d-lg-block d-xl-none col">LG - Largue</div>
+            <div class="columna d-none d-xl-block col">XL - Extra Largue</div>            
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit consequuntur molestias quidem ullam nostrum sapiente placeat aliquid enim inventore cum, fuga quis! Tenetur provident natus architecto nam voluptate corrupti neque!</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/bootstrap v4.4.1.min.js"></script>
+</body>
+</html>

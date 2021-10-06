@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"> <!-- , maximum-scale=1.0, minimun-scale=1.0 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plantilla</title>
+    <link rel="stylesheet" href="../css/bootstrap v4.4.1.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <!-- Las filas (row) son grupos HORIZONTALES de columnas
+             Todos el contenido debe ir dentro de las columnas (col)
+             Y las columnas deben ir directamente dentro de la filas (row)
+            
+            NUEVO:
+            .col        Automatico                                           Depende del objeto o componente
+            .col-xs     Extra Pequeño(Extra Small) - Smartphone  Vertical    Menor de 576pxm
+            .col-sm     Pequeño(Small) - Smartphone  Vertical                Mas de 576px y menos de 768px
+            .col-md     Mediano(Medium) - Tabletas                           Mas de 768px y menos de 992px
+            .col-lg     Largo(Largue) - Computadoras                         Mas de 992px y menos de 1200px
+            .col-xl     Extra Largo(Extra Largue) - Computadoras             Mas de 1200px                   -->
+
+        <div class="row mt-3">
+            <div class="col">
+                <form action="" class="form-inline">
+                    <input type="text" class="form-control mr-3" name="nombre" id="nombre" placeholder="Nombre">
+                    <input type="password" class="form-control mr-3" name="password" id="pasword" placeholder="Contraseña">
+
+                    <label class="form-check-label mr-3">
+                        <input type="checkbox" name="recordar" id="recordar" class="form-check-input">Recordar Sesion
+                    </label>
+
+                    <input type="submit" class="btn btn-success" value="Iniciar Sesion">
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../js/bootstrap v4.4.1.min.js"></script>
+</body>
+</html>

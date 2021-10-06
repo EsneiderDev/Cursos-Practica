@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"> <!-- , maximum-scale=1.0, minimun-scale=1.0 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plantilla</title>
+    <link rel="stylesheet" href="css/bootstrap v4.4.1.min.css"/>
+    <style>
+        .columna{
+            margin-top: 20px;
+            /* background: #f2f2f2;
+            border: 1px solid #424242; */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row no-gutters"><!-- no gutters Elimina los espaciados del padding right y left de 15px que trae por defecto bootstrap -->
+            <div class="col-12 columna">
+                
+                <img class="img-fluid float-left img-thumbnail" src="../../../../Curso de Sistemas/Curso de PHP/Curso Crea aplicaciones PHP seguras con POO-MVC, PDO-SQL y AJA/Curso Crea aplicaciones PHP seguras con POO-MVC, PDO-SQL y AJA.png" alt=""> <!-- La clase img-fluid se adapta al tamaño del elemento padre-->
+                <img class="img-fluid float-right img-thumbnail" src="../../../../Curso de Sistemas/Curso de PHP/Curso Crea aplicaciones PHP seguras con POO-MVC, PDO-SQL y AJA/Curso Crea aplicaciones PHP seguras con POO-MVC, PDO-SQL y AJA.png" alt=""> <!-- La clase img-fluid se adapta al tamaño del elemento padre-->
+
+            </div>    <!-- img-fuid es para que se adapte la imagen al tamaño de la columna; Ej: Si hay un desbordamiento de la imagen y sobrepasa la columna. tiene el tamaño del elemento padre -->
+                   <!-- float-left hace flotar la imagen hacia la izquierda al igual que float-rigth pero esta a la izquierda -->
+                      <!-- img-thumbnail le coloca un marco a la imagen-->
+        </div> 
+
+        <hr>
+
+        <div class="row">
+            <div class="col-6">
+
+                <figure class="figure">
+                    <img src="../../../../Curso de Sistemas/Curso de PHP/Curso Crea aplicaciones PHP seguras con POO-MVC, PDO-SQL y AJA/Curso Crea aplicaciones PHP seguras con POO-MVC, PDO-SQL y AJA.png" alt="">
+                    <figcaption class="figure-caption">
+                        <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                    </figcaption>
+                </figure>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/bootstrap v4.4.1.min.js"></script>
+</body>
+</html>

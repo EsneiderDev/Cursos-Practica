@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"> <!-- , maximum-scale=1.0, minimun-scale=1.0 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plantilla</title>
+    <link rel="stylesheet" href="css/bootstrap v4.4.1.min.css"/>
+    <style>
+        .table{
+            margin-top: 15px;
+        }
+    </style> 
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <!-- .table-striped: Nos Permite cambiar los colores de la tabla a oscuro -->
+                <!-- .table-bordered: Nos Permite alternar colores entre cada fila -->
+                <!-- .table-hover: Nos Permite agregale un Hover a las filas -->
+                <!-- .table-sm: Nos Permite hacer la tabla mas pequeña, eliminando padding -->
+                <!-- .table-responsive: Nos Permite adaptar nuestra tabla a cada dispositivos moviles y si es muy grande la tabla coloca un scroll -->
+                <table class="table table-inverse table-bordered table-hover"> 
+                    <thead class="thead-default"> <!--tr  para las filas-->
+                        <th>Nombre</th><!--td para las columnas -->
+                        <th>Edad</th>
+                        <th>Pais</th>    
+                    </thead>
+                    <!--
+                        .table-active
+                        .table-success
+                        .table-warning
+                        .table-danger
+                        .table-info
+                    -->
+                    <tr class="table-info">
+                        <td>Esneider</td>
+                        <td>22</td>
+                        <td>Colombia</td>   
+                    </tr>
+                    <!--
+                        .bg-primary
+                        .bg-success
+                        .bg-warning
+                        .bg-danger
+                        .bg-info
+                    -->
+                    <tr class="bg-info">
+                        <td>Manuel</td>
+                        <td>23</td>
+                        <td>Israel</td>
+                    </tr>
+                    <tr>
+                        <td>Jesus</td>
+                        <td>13</td>
+                        <td>Jerualem</td>
+                    </tr>
+                </table>
+            </div>   
+        </div>
+
+    </div>
+
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/bootstrap v4.4.1.min.js"></script>
+</body>
+</html>

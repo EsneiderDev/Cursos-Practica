@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"> <!-- , maximum-scale=1.0, minimun-scale=1.0 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid</title>
+    <link rel="stylesheet" href="../css/bootstrap v4.4.1.min.css"/>
+    <style>
+        .row >  div{
+            text-align: center;
+            margin: 10px 3px;
+        }
+        .row div:nth-child(2n+1){ background: #b2b2b2;}
+        .row div:nth-child(2n+2){background:#f2f2f2;}
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col uno">
+                <h3>Columna #1</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, modi quod veniam voluptatem saepe incidunt. Similique, dolor delectus est aperiam repudiandae tempore quaerat deleniti incidunt asperiores impedit dolorem maxime architecto?</p>
+            </div>
+
+            <div class="col dos">
+                <h3>Columna #2</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi alias reprehenderit laudantium et. Perferendis, modi dolor ab accusamus fuga sit iste molestias asperiores deserunt. Vitae laudantium expedita quos cum saepe.</p>
+            </div>
+
+            <div class="w-100"></div>
+            
+            <div class="col-6">
+                <h3>Columna #3</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe tempore, nihil eveniet velit corporis eligendi rerum consequatur asperiores facilis exercitationem maxime excepturi porro vitae eaque distinctio expedita labore eos. Earum!</p>
+            </div> 
+
+            <div class="w-100"></div>
+            
+            <div class="col-6">
+                <h3>Columna #4</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero magnam, officia modi in iusto error saepe, rem corporis repudiandae omnis quos eligendi similique quia laudantium fuga doloremque vero possimus architecto?</p>
+            </div> 
+
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../js/bootstrap v4.4.1.min.js"></script>
+</body>
+</html>

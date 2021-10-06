@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0"> <!-- , maximum-scale=1.0, minimun-scale=1.0 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plantilla</title>
+    <link rel="stylesheet" href="css/bootstrap v4.4.1.min.css"/>
+</head>
+<body>
+    <!---
+        Clases que podemos utilizas: 
+            1. .card-body:          Establecemos cual sera el contenedor del contenido
+                2. .card-title:     Establecemos un texto como titulo de la card 
+                3. .card-subtible:  Establecemos un subtitulo para la card
+                4. .card-text:      Establecemos un texto de la card
+                5. .card-link:      Establecemos un enlace a la card
+            6. .card-img-top:       Establecemos una imagen para la card en la parte superior 
+            7. .card-img-botton:    Establecemos una imagen para la card en la parte inferior 
+
+        -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col">
+                <h3>Card Group</h3>
+                <div class="card-group mt-3">
+                    <div class="card">
+                        <img src="img/bg.jpg" class="card-img-top img-fluid" alt="">
+                        <div class="card-body">
+                            <h1 class="card-title">Encabezado</h1>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio nisi nesciunt excepturi sed laboriosam. 
+                               Labore fugiat aut eaque porro libero ratione dolorum. Accusantium, ea ut. Facilis natus repellendus itaque beatae!
+                            </p>
+                            <button class="btn btn-primary">Boton</button>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Footer</small>
+                        </div><!--No importa si le colocas un footer, las card siempre vas a estar del mismo tamaño, aunque la otra tenga mas
+                                  contenido que las otras-->
+                    </div>
+                    <div class="card">
+                        <img src="img/bg.jpg" class="card-img-top img-fluid" alt="">
+                        <div class="card-body">
+                            <h1 class="card-title">Encabezado</h1>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio nisi nesciunt excepturi sed laboriosam. 
+                               Labore fugiat aut eaque porro libero ratione dolorum. Accusantium, ea ut. Facilis natus repellendus itaque beatae!
+                                
+                               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio nisi nesciunt excepturi sed laboriosam. 
+                               Labore fugiat aut eaque porro libero ratione dolorum. Accusantium, ea ut. Facilis natus repellendus itaque beatae!
+                            
+                            </p>
+                            <button class="btn btn-primary">Boton</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/bg.jpg" class="card-img-top img-fluid" alt="">
+                        <div class="card-body">
+                            <h1 class="card-title">Encabezado</h1>
+                            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio nisi nesciunt excepturi sed laboriosam. 
+                               Labore fugiat aut eaque porro libero ratione dolorum. Accusantium, ea ut. Facilis natus repellendus itaque beatae!
+                            </p>
+                            <button class="btn btn-primary">Boton</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/bootstrap v4.4.1.min.js"></script>
+</body>
+</html>

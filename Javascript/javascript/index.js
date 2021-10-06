@@ -19,9 +19,9 @@ console.log(Object.keys(arr)); // console: ['0', '1', '2'] */
 colores = ["Rojo", "azul", "negro"];
 
 //1 forma
-/* colores.forEach(elemento => {
+colores.forEach(elemento => {
     console.log(elemento);
-}); */
+});
 
 //2 forma
 colores.forEach( function (colores, index) {

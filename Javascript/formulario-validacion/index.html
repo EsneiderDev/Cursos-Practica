@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-roboto-css2.css">
     <link rel="stylesheet" href="css/estilos.css">
+
+    <script>
+        function stopDefAction(evt) {
+            evt.preventDefault();
+        }
+    </script>
 </head>
 <body>
     <main>
@@ -43,10 +49,10 @@
             </div>
 
             <!-- Grupo: contraseña 2-->
-            <div class="formulario__grupo" id="grupo__ password2">
+            <div class="formulario__grupo" id="grupo__password2">
                 <label for=" password2" class="formulario__label">Repetir contraseña</label>
                 <div class="formulario__grupo-input">
-                    <input type=" password" class="formulario__input" name="password2" id="password2">
+                    <input type="password" class="formulario__input" name="password2" id="password2">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">Ambas contraseñas deben de ser iguales.</p>
@@ -75,7 +81,7 @@
             <!-- Gupo: Terminos y Condiciones -->
             <div class="formulario__grupo" id="grupo__terminos">
                 <label class="formulario__label">
-                    <input class="formulario__checkbox" type="checkbox" onclick="preventDef(event);" name="terminos" terminos" checked>
+                    <input class="formulario__checkbox" type="checkbox" onclick="preventDef(event);" name="terminos" id="terminos" checked>
                     Acepto los terminos y condiciones
                     <button onclick="">Habilitar</button>
                 </label>

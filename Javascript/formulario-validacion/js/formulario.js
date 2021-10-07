@@ -1,7 +1,6 @@
-
 const formulario = document.getElementById('formulario');          // podemos acceder a los formularios y lo trae como u
 const inputs     = document.querySelectorAll('#formulario input'); // devuelve un array de todo los input
-const labels     = document.querySelectorAll('#formulario label' );
+const labels     = document.querySelectorAll('#formulario label');
 
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -11,63 +10,97 @@ const expresiones = {
 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
 
+const validarPassword2 = () => {
+    var password1 = document.getElementById('password');
+    var password2 = document.getElementById('password2');
+
+    if(password1.value != password2.value){
+        document.getElementById('grupo__password2').classList.remove('formulario__grupo-correcto');
+	    document.getElementById('grupo__password2').classList.add('formulario__grupo-incorrecto');
+        document.querySelector('#grupo__password2 i').classList.remove('fa-check-circle');
+        document.querySelector('#grupo__password2 i').classList.add('fa-times-circle');
+        document.querySelector('#grupo__password2 .formulario__input-error').classList.add('formulario__input-error-activo');
+    }else{
+        document.getElementById('grupo__password2').classList.remove('formulario__grupo-incorrecto');
+	    document.getElementById('grupo__password2').classList.add('formulario__grupo-correcto');
+        document.querySelector('#grupo__password2 i').classList.remove('fa-times-circle');
+        document.querySelector('#grupo__password2 i').classList.add('fa-check-circle');
+        document.querySelector('#grupo__password2 .formulario__input-error').classList.remove('formulario__input-error-activo');
+    }
+}
 
 // Para comprobrar el nombre del input 
 const validarFormulario = (e) => {
-    /* console.log(e.target.name); */ // cuando demos click o tec
-
+    /* console.log(e.target.name); */  // cuando demos click o tec
     switch ( e.target.name ) {
         case "usuario":
-            /* console.log('Funciona en el nombre de '+ e.target.name ); */
-            if(!expresiones.usuario.test( e.target.name )){
-                console.log( expresiones.usuario.test( e.target.name ));    // console => expresiones.usuario.test("#") --> false
-            }else{
-                console.log('false');
-            }
+                validarCampo(expresiones.usuario, e.target, e.target.name );
             break;
         case "nombre":
-            
+                validarCampo(expresiones.nombre, e.target, e.target.name );
             break;
         case "password":
-            
+                validarCampo(expresiones.password, e.target, e.target.name );
             break;
         case "password2":
-            
+                validarPassword2();
             break;
         case "correo":
-            
+                validarCampo(expresiones.correo, e.target, e.target.name );
             break;
         case "telefono":
-            
+                validarCampo(expresiones.telefono, e.target, e.target.name );
             break;
         default:
-            console.log("Esta sin definir");
+            console.log("No hay validacion para el campo");
             break;
-    }
-    
+    }  
 }
 
+const validarCampo = (expresion, input, campo) => {
+    if(expresion.test( input.value )){         
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+	    document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+    }else{
+        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+        document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+        document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+    }
+}
+
+//Cuendo el usuario escriba y de un clic afuera
 inputs.forEach( (input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
+    input.addEventListener('keyup', validarFormulario );
+    input.addEventListener('blur', validarFormulario );
 });
 
-formulario.addEventListener('submit', (e) => { 
-    e.preventDefault(); // Anula el evento para no enviar el formulario sin nada
+/* inputs.forEach( (input) => {
+    // console.log(input);
+    // console.log(input.name);
+
+    input.addEventListener('keyup', () => {
+        console.log('escribiendo...'); 
+    });
+}); */
+
+formulario.addEventListener('submit', (form) => { 
+    /* console.log( form.target ); */
+    form.preventDefault(); // Anula el evento para no enviar el formulario sin nada
 });
 
 
 
+/* 
 
-
-
-
- 
 function preventDef(event) {
     event.preventDefault();
 }
 
-/*  
 function agregarManipulacion() {
     document.getElementById("checkbox").addEventListener("click", 
     preventDef, false);

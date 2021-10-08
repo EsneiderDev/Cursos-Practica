@@ -1,4 +1,3 @@
-
 function Jugadores(nombre, ) 
 {
     this.nombre = nombre;
@@ -54,7 +53,6 @@ function Jugadores(nombre, )
     }
 
 }
-
 
 var gandalf = new Jugadores("Gandalf");
 var legolas = new Jugadores("Legolas");

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="areas">Areas:</label>
+    <select id="areas">
+        <option value="0">seleccione</option>
+    </select>
+    <br>
+
+    <label for="categoria">Categorias:</label>
+    <select id="categorias">
+        <option value="0">selecccione</option>
+    </select>
+    <br>
+
+    <label for="subCategoria">Sub Categorias:</label>
+    <select id="subCategorias">
+        <option value="0">selecccione</option>
+    </select>
+
+    <script type="text/javascript" >
+        var areas = [
+            {id:1, name:"area1"},
+            {id:2, name:"area2"},
+            {id:3, name:"area3"}
+        ]
+        var categorias = [
+            {
+                id:1,  
+                name:"categoria1", 
+                idArea:1
+            },
+            {id:2,  name:"categoria2", idArea:1},
+            {id:3,  name:"categoria3", idArea:1},
+            {id:4,  name:"categoria4", idArea:2},
+            {id:5,  name:"categoria5", idArea:2},
+            {id:6,  name:"categoria6", idArea:2},
+            {id:7,  name:"categoria7", idArea:3},
+            {id:8,  name:"categoria8", idArea:3},
+            {id:9,  name:"categoria9", idArea:3},
+        ]
+
+        var subCategorias = [
+            {
+                id:1,
+                name:"subcategoria1",
+                idCategoria:1
+            },
+            {id:2,name:"subcategoria2",idCategoria:1},
+            {id:3,name:"subcategoria3",idCategoria:2},
+            {id:4,name:"subcategoria4",idCategoria:2},
+            {id:5,name:"subcategoria5",idCategoria:3},
+            {id:6,name:"subcategoria6",idCategoria:3},
+            {id:7,name:"subcategoria7",idCategoria:4},
+            {id:8,name:"subcategoria8",idCategoria:4},
+            {id:9,name:"subcategoria9",idCategoria:5},
+            {id:10,name:"subcategoria10",idCategoria:5},
+            {id:11,name:"subcategoria11",idCategoria:6},
+            {id:12,name:"subcategoria12",idCategoria:6},
+            {id:13,name:"subcategoria13",idCategoria:7},
+            {id:14,name:"subcategoria14",idCategoria:7},
+            {id:15,name:"subcategoria15",idCategoria:8},
+            {id:16,name:"subcategoria16",idCategoria:8},
+            {id:17,name:"subcategoria17",idCategoria:9},
+            {id:18,name:"subcategoria18",idCategoria:9},
+        ]
+
+        //creando los options de area
+        var areasSelect = document.getElementById('areas');
+        var categoriasSelect = document.getElementById('categorias');
+        var subCategoriasSelect = document.getElementById('subCategorias');
+
+        areasSelect.addEventListener("change", cargarCategorias);
+        categoriasSelect.addEventListener("change", cargarSubCategorias); 
+
+        areas.forEach(function(area){
+            let opcion = document.createElement('option')
+            opcion.value = area.id
+            opcion.text = area.name
+            areasSelect.add(opcion)
+        })
+
+        function cargarCategorias(){
+            categoriasSelect.options.length = 1;
+            subCategoriasSelect.options.length = 1;
+            categorias
+            .filter(function (categoria){
+                return categoria.idArea == this;
+            }, areasSelect.value)
+            .forEach(function(categoria){
+                let opcion = document.createElement('option')
+                opcion.value = categoria.id
+                opcion.text = categoria.name
+                categoriasSelect.add(opcion);
+            });
+        }
+
+        function cargarSubCategorias(){
+            subCategoriasSelect.options.length = 1;
+            subCategorias
+            .filter(function (subCategoria){
+                return subCategoria.idCategoria == this;
+            }, categoriasSelect.value)
+            .forEach(function(subCategoria){
+                let opcion = document.createElement('option')
+                opcion.value = subCategoria.id
+                opcion.text = subCategoria.name
+                subCategoriasSelect.add(opcion);
+            });
+        }
+    </script>
+
+</body>
+</html>

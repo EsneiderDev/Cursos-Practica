@@ -1,10 +1,11 @@
-function Jugadores(nombre, ) 
+function Jugadores(nombre) 
 {
     this.nombre = nombre;
     this.pv     = 100; // puntos de vida
     this.sp     = 100; // magis o special poin
 
     this.curar = function ( jugadorObjetivo ) {  
+
         while(jugadorObjetivo.pv > 1){
             if(this.pv == 0 ){
                 console.error(this.nombre+" esta muerto, no puede pasar puntos de vida");

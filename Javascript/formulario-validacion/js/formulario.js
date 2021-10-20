@@ -24,7 +24,7 @@ const validarFormulario = (e) => {
     /* console.log(e.target.name); */  // cuando demos click o tec
     switch ( e.target.name ) {
         case "usuario":
-                validarCampo(expresiones.usuario, e.target, 'usuario' );
+                validarCampo(expresiones.usuario, e.target, e.target.name );
             break;
         case "nombre":
                 validarCampo(expresiones.nombre, e.target, 'nombre' );

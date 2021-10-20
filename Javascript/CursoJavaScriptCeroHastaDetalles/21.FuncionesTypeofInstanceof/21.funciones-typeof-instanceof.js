@@ -9,6 +9,7 @@ function Persona() {
 
 var esneider = new Persona();
 
+
 //------ Tipo objeto
 identificador(esneider);            // object 
 
@@ -47,13 +48,11 @@ identificador2( function (){console.log('Es una funcion')} ); // function
 identificador2(2);
 */
 
-
 function identificador3 ( param ) {
-    if ( typeof param == "function") {
-        param();
-    }else{
-        console.log(  param );
-    }
+
+    console.log( typeof param );
+    console.log(param instanceof Persona3);
+    console.log(param.nombre);
 }
 
 function Persona3() {
@@ -64,4 +63,4 @@ function Persona3() {
 var manuel = new Persona3();
 
 // Tipo objeto
-identificador2(manuel);
+identificador3(manuel);         // true

@@ -27,6 +27,21 @@ saludarFlacha2('Esneider');                              // Hola Esneider
 
  */
 
+function sumar(a, b){
+    return a + b;
+}
+console.log(sumar(2, 3));                               // 5
+
+const sumar2 = (a,b) => a + b; 
+
+console.log( sumar2(5,3) );                             // 8
+
+function getAleatoreo() {
+    return Math.random();
+}
+
+let getAleatoreo2 = () =>  Math.random()+10;
 
 
-
+console.log('Aleatorio 1: ', getAleatoreo() );
+console.log('Aleatorio 2: ', getAleatoreo2() );

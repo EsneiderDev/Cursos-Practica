@@ -89,7 +89,7 @@ function miFuncion7(a, b, c, d) {
     console.log( 30 + undefined );
 }
 
-miFuncion7(); // NaN
+miFuncion7();                                 // NaN
 
 console.log('------------- parametros extrictos ---------');
 

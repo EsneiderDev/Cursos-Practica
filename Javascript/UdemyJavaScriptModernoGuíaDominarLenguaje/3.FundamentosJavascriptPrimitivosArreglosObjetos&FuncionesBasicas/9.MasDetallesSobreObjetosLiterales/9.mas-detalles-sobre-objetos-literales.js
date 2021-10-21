@@ -43,8 +43,8 @@ console.log('-- No se pueda cambiar el objeto --');
 console.log(personaje);
 // personaje = true;   //  Uncaught TypeError: Assignment to constant variable.
 
-// Nota: no cambia el delete y la propiedad asignada porque solo bloquea los tipos de asignacion, 
-//        ej: "personaje = {} " esto daria error 
+// Nota: "delete" sigue funcionando y la propiedad asignada "casado" tambien porque solo bloquea los tipos de asignacion
+//       como por ejemplo: "personaje = {} " esto daria error 
 
 console.log('-- Bloquear el objeto --');
 
@@ -58,7 +58,7 @@ console.log(personaje.casado);            // true
 
 console.log('\n--Propiedades dentro de propiedades se puede modificar');
 // Nota: el Object.freeze solo congele las propiedades pero no las que estan dentro de ellas
-personaje.coords.lat = 10
+personaje.coords.lat = 10;                // 10
 console.log('Latitud: ', personaje.coords.lat);
 console.log('Solucion: ');
 

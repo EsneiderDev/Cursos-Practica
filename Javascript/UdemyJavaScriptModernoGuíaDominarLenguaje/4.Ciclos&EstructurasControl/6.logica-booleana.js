@@ -1,8 +1,8 @@
 /* 
   Tabla: NOT            Tabla:OR                   Tabla:AND  
-    a	y           a	    b	    y           a    	b      	y
-    0	1           0	    0	    0           0    	0      	0
-    1	0           0	    1	    1           0    	1      	0
+    a	y             a	    b	    y           a    	b      	y
+    0	1             0	    0	    0           0    	0      	0
+    1	0             0	    1	    1           0    	1      	0
                     1	    0	    1           1    	0      	0
                     1	    1	    1           1    	1      	1
 */  

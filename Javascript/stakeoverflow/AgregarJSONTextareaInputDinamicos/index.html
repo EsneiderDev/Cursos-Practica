@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como agregar un aestructura JSON al Textarea</title>
+    <!-- https://es.stackoverflow.com/questions/428382/como-agregar-un-aestructura-json-al-textarea -->
+</head>
+<body>
+
+    <!-- FORMULARIO -->
+    <form method="post">
+        <div class="templatecARD" data-group="0" >
+            <label>Tarif</label>
+            <input type="text" class="name_tarif" name="tarif"/>
+            <br/>
+                <label>Power</label>
+
+            <div id="power">
+                <input type="text" name="t_power"/>
+                <input type="text" name="v_power"/>
+                <button type="button" onclick="addPower()">+</button>
+            </div>
+            <br/>
+                <label>Energy</label>
+
+            <div id="energy">
+                <input type="text" name="t_energy"/>
+                <input type="text" name="v_energy"/>
+                <button type="button" onclick="addEnergy()">+</button>
+            </div>
+        </div>
+        <br>
+        <button type="button" onclick="sndFrm()">UPDATE TEXTAREA</button>
+    </form>
+    <!-- FORMULARIO -->
+
+
+    <!-- EDITOR DE JSON -->
+    <br>
+    <textarea id="txtare" style="width: 300px; height: 300px;"></textarea>
+    <!-- EDITOR DE JSON -->
+    <button type="button" onclick="copyPaste()">UPDATE FORM</button>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        //      BTN ADD BUTTON V_POWER
+
+function addPower() {
+   var power = document.getElementById("power");
+   //aquí agregamos el componente de tipo input
+   var input = document.createElement("INPUT");
+   //aquí indicamos que es un input de tipo text
+   input.type = 'text';
+   input.name = 'v_power';
+   
+   //y por ultimo agreamos el componente creado al padre
+   power.appendChild(input);
+}
+
+
+//       BTN ADD BUTTON V_ENERGY
+function addEnergy()    {
+   var energy = document.getElementById("energy");
+   //aqui agregamos el componente de tipo input
+   var input = document.createElement("INPUT");
+   //aqui indicamos que es un input de tipo text
+   input.type = 'text';
+   input.name = 'v_energy';
+   
+   //y por ultimo agreamos el componente creado al padre
+   energy.appendChild(input);
+}
+
+
+//    BTN LECTURA VALORES INPUT
+
+function sndFrm()   {
+//    Numerar cuantos input hay y pasarlos por variable
+
+
+   
+
+   var jotason = [];
+   document.body.querySelectorAll(".templatecARD").forEach(form=>{
+
+         let obj = {
+            title : form.querySelector(".name_tarif").value
+         };
+         // power
+         let power = {};
+         form.querySelectorAll("input[name=t_power]").forEach((inpt, index)=>{
+            var ob = power[index]||{};
+            ob.type=inpt.value;
+            power[index]=ob;
+         });
+         form.querySelectorAll("input[name=v_power]").forEach((inpt, index)=>{
+            var ob = power[index]||{};
+            ob.value=inpt.value;
+            power[index]=ob;
+         });
+         
+         // energy
+         let energy = {};
+         form.querySelectorAll("input[name=t_energy]").forEach((inpt, index)=>{
+            var oj = energy[index]||{};
+            oj.type=inpt.value;
+            energy[index]=oj;
+         });
+         form.querySelectorAll("input[name=v_energy]").forEach((inpt, index)=>{
+            var oj = energy[index]||{};
+            oj.value=inpt.value;
+            energy[index]=oj;
+         });
+         obj.power = power;
+         obj.energy = energy;
+         jotason.push(obj);
+
+   });
+
+   var jsoned = JSON.stringify(jotason,undefined, 2);
+   document.getElementById('txtare').value=jsoned;
+}
+
+
+
+//    Obtener el valor del textarea
+
+/*
+function copyPaste() {
+   var txtAr = document.getElementsByTagName('textarea')[0].value;
+
+   console.log(txtAr);
+}*/
+    </script>
+</body>
+</html>

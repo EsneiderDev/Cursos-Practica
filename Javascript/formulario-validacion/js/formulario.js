@@ -103,7 +103,7 @@ inputs.forEach( (input) => {
 }); */
 
 formulario.addEventListener('submit', ( e ) => { 
-    /* console.log( form.target ); */
+    console.log( form.target );
     e.preventDefault(); // Anula el evento para no enviar el formulario sin nada
 
     const terminos = document.getElementById('terminos');
@@ -124,11 +124,11 @@ formulario.addEventListener('submit', ( e ) => {
     }
 });
 
-/* 
+
 function preventDef(event) {
     event.preventDefault();
 }
-
+/* 
 function agregarManipulacion() {
     document.getElementById("checkbox").addEventListener("click", 
     preventDef, false);

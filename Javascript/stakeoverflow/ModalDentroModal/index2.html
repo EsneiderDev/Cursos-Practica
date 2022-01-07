@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+	<div class="container">
+		<div class="row mt-3">
+			<div class="col">
+                
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+					Launch demo modal
+				</button>
+			  
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Seleccionar cuenta por pagar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+						</div>
+						<div class="modal-body">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Password</label>
+                                        <input type="password" class="form-control" id="inputPassword4">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress">Address</label>
+                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress2">Address 2</label>
+                                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputCity">City</label>
+                                        <input type="text" class="form-control" id="inputCity">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputState">State</label>
+                                        <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>...</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label for="inputZip">Zip</label>
+                                        <input type="text" class="form-control" id="inputZip">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                                        <label class="form-check-label" for="gridCheck">
+                                        Check me out
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="callModal2" data-toggle="modal" data-target="#modal2">Sign in</button>
+                            </form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							<button type="button" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control input-sm" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="callModal3" data-toggle="modal" data-target="#modal3">Llamar modal 3</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cerrarModal2" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> -->
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cerrarModal3" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+			$('#callModal2').click(function(e){
+                e.preventDefault();
+
+                $('#exampleModal').modal('hide').on('hidden.bs.modal', function (e) {
+                    $('#modal2').modal('show');
+                    $(this).off('hidden.bs.modal'); // Remove the 'on' event binding
+                });
+
+            });
+
+            $(document).on('click', '#cerrarModal2', function() {
+            	$('#exampleModal').modal('show');
+        	});
+
+            $('#callModal3').click(function(e){
+                e.preventDefault();
+
+                $('#modal2').modal('hide').on('hidden.bs.modal', function (e) {
+                    $('#modal3').modal('show');
+                    $(this).off('hidden.bs.modal'); // Remove the 'on' event binding
+                });
+            });
+
+            $(document).on('click', '#cerrarModal3', function() {
+            	$('#modal2').modal('show');
+        	});
+            
+        });
+    </script>
+
+
+  </body>
+</html>

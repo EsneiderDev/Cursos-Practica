@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        #modal2 {
+            left: -7px;
+            top: 11em;
+        }
+        /* @media (min-width: 768px){
+            #modal2 {
+                left: -1px;
+                top: 9em;
+            }
+        }
+            */ 
+    </style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+					Launch demo modal
+				</button>
+			  
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						</div>
+						<div class="modal-body">
+							
+			
+			
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+	
+
+    <button type="button" id="Crear" class="btn btn-primary">
+        <span class="fa fa-plus"></span> Agregar
+    </button>
+
+	<!-- MODAL 1 -->
+	<div id="ModalCrear" class="modal fade modal-dialog-centered" role="dialog" style="overflow-y: scroll;"> 
+    	<div class="modal-dialog">
+    		<div class="modal-content">
+    			<div class="modal-header"> 
+    				<h4 class="modal-tittle">Crear</h4> 
+    			</div> 
+    			<form class="form-horizontal" role="form" id="form-crear">
+    				<div class="modal-body"> 
+    					<div class="row form-group col-md-12">
+    						<label for="crear_codigo" class="control-label col-sm-2 col-xs-12">Código: </label>
+    						<div class="col-sm-4 col-xs-6">
+    							<input type="number" class="form-control" id="crear_codigo" name="crear_codigo">
+    						</div>
+    					</div>  
+    					<div class="row form-group col-md-12">
+    						<label for="crear_nombre" class="control-label col-sm-2 col-xs-12">Nombre: </label>
+    						<div class="col-sm-6 col-xs-10 selectContainer">
+    							<select id="crear_nombre" name="crear_nombre" class="form-control" style="width: 100%;">
+                                        <option value="0">Seleccione...</option>
+                                        <option value="1">Clorace</option>
+                                        <option value="2">Miovit</option>
+    							</select>
+    						</div>
+    						<div class="col-sm-2 col-xs-2">
+    							<button type="button" class="btn btn-primary" id="agregar_nombres">
+    								<span class="fa fa-plus"></span>
+                        			<span class="hidden-xs"> Agregar Items</span> 
+    							</button>
+    						</div>
+    					</div> 
+    					<div class="row form-group col-md-12">
+    						<label for="crear_formas_farmaceuticas" class="control-label col-sm-2 col-xs-12">Forma Farmacéutica: </label>
+    						<div class="col-sm-6 col-xs-10 selectContainer">
+    							<select id="crear_formas_farmaceuticas" class="form-control" name="crear_formas_farmaceuticas" style="width: 100%;">
+                                        <option value="0">Seleccione...</option>
+                                        <option value="1">Inyección</option>
+                                        <option value="2">Jarabe</option>
+    							</select>
+    						</div>
+    						<div class="col-sm-1 col-xs-2">
+    							<button type="button" class="btn btn-primary" id="agregar_formas">
+    								<span class="fa fa-plus"></span>
+                        			<span class="hidden-xs"> Agregar Items</span> 
+    							</button>
+    						</div>
+    					</div>
+    					<div class="row form-group col-md-12">
+    						<label for="crear_presentacion" class="control-label col-sm-2 col-xs-12">Presentación: </label>
+    						<div class="col-sm-3 col-xs-5">
+    							<input type="number" class="form-control" id="crear_presentacion" name="crear_presentacion">
+    						</div> 
+    						<div class="col-sm-4 col-xs-7 selectContainer">
+    							<select id="crear_unidad_de_medicion_p" class="form-control" name="crear_unidad_de_medicion_p" style="width: 100%;">
+                                        <option value="0">Seleccione...</option>
+                                        <option value="1">(und) Unidad</option>
+                                        <option value="2">(ml) Mililitro</option>
+                                        <option value="2">(mg) Miligramo</option>
+    							</select>
+    						</div>
+    					</div>
+    					<div class="row form-group col-md-12">
+    						<label for="crear_unidad_teorica" class="control-label col-sm-2 col-xs-12">Unidad Teórica: </label>
+    						<div class="col-sm-5 col-xs-5">
+    							<input type="number" class="form-control" id="crear_unidad_teorica" name="crear_unidad_teorica">
+    						</div> 
+    						<div class="col-sm-4 col-xs-7 selectContainer">
+    							<select id="crear_unidad_de_medicion_u" class="form-control" name="crear_unidad_de_medicion_u" style="width: 100%;">
+                                        <option value="0">Seleccione...</option>
+                                        <option value="1">(und) Unidad</option>
+                                        <option value="2">(ml) Mililitro</option>
+                                        <option value="2">(mg) Miligramo</option>
+    							</select>
+    						</div>
+    					</div>
+    					<div class="row form-group col-md-12">
+    						<label for="crear_velocidad" class="control-label col-sm-2 col-xs-12">Velocidad del Producto: </label>
+    						<div class="col-sm-3 col-xs-5">
+    							<input type="number" class="form-control" id="crear_velocidad" name="crear_velocidad">
+    						</div> 
+    						<label class="col-sm-5 col-xs-7">
+    							<h4>
+    								<sup id="crear_unidad_de_medicion_v_u" name="crear_unidad_de_medicion_v_u">
+    									
+    								</sup>
+    								/
+    								<sub id="crear_unidad_de_medicion_v_t" name="crear_unidad_de_medicion_v_t">
+    									min
+    								</sub>
+    							</h4>
+    						</label>
+    					</div>
+    					<div class="row form-group col-md-12">
+    						<label class="control-label col-sm-2 col-xs-12">Tiempo Teórico: </label>
+    						<label class="col-sm-7 col-xs-7">
+    							<h4>
+    								<sub id="crear_tiempo_teorico" name="crear_tiempo_teorico">
+    									
+    								</sub>
+    							</h4>
+    						</label>
+    					</div>
+    					<div class="row form-group col-md-12">
+    						<label for="crear_linea_de_produccion" class="control-label col-sm-2">Linea de Producción:</label>
+    						<div class="col-sm-8 selectContainer">
+    							<select id="crear_linea_de_produccion" class="form-control" name="crear_linea_de_produccion" style="width: 100%;">
+                                        <option value="0">Seleccione...</option>
+                                        <option value="1">Liquidos Esteriles</option>
+                                        <option value="2">Liquidos No Esteriles</option>
+                                        <option value="2">Solidos</option>
+    							</select>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="modal-footer">
+    					<button type="button" class="btn btn-default" data-dismiss="modal">
+    						<span class="glyphicon glyphicon-remove"></span>
+                        	<span class="hidden-xs"> Cerrar</span> 
+    					</button>
+    					<button type="button" id="Guardar" name="Guardar" class="btn btn-primary">
+    						<span class="fa fa-save"></span>
+                        	<span class="hidden-xs"> Guardar</span> 
+    					</button>
+    				</div>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+	<!-- fin modal 1 -->
+
+	<!-- MODAL 2 -->
+    <div id="ModalAgregarNombre" class="modal fade modal-dialog-centered" role="dialog"> 
+    	<div class="modal-dialog">
+    		<div class="modal-content" id="modal2">
+    			<div class="modal-header"> 
+    				<h4 class="modal-tittle">Agregar</h4>
+    			</div>
+                <form class="form-horizontal" role="form" id="form-agregar">
+                <div class="modal-body">
+                   
+                        <div class="modal-body"> 
+                            <div class="form-group col-md-12">
+                                <label for="agregar_nombre" class="control-label col-sm-4">Nombre: </label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="agregar_nombre" name="agregar_nombre">
+                                </div>
+                            </div> 
+                        </div> 
+                    </div>
+                    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="cerrar">
+                                <span class="glyphicon glyphicon-remove"></span><span class="hidden-xs"> Cerrar</span>
+                            </button>
+                            <button type="button" id="GuardarNombre" name="GuardarNombre" class="btn btn-primary">
+                                <span class="fa fa-save"></span><span class="hidden-xs"> Guardar</span>
+                            
+                            </button>
+                        </div>
+    			</form>
+    		</div>
+    	</div>
+    </div>
+	<!-- fin modal 2 -->
+
+	<!-- MODAL 3 -->
+    <div id="ModalAgregarCrear" class="modal fade modal-dialog-centered" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="my-modal-title">Title</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Content</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="cerrarModal3" data-dismiss="modal">
+    					<span class="glyphicon glyphicon-remove"></span>
+                       	<span class="hidden-xs"> Cerrar</span> 
+    				</button>
+    				<button type="button" id="Guardar" name="Guardar" class="btn btn-primary">
+    					<span class="fa fa-save"></span>
+                       	<span class="hidden-xs"> Guardasr</span> 
+    				</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- fin modal 3 -->
+
+
+    <script>
+        
+
+        $(function () {
+			//Eventos
+			$(document).on('click', '#Crear', function() {
+            	$('#ModalCrear').modal('show');
+        	});
+    
+        	$(document).on('click', '#agregar_nombres', function() {
+        	    $('#ModalAgregarNombre').modal('show');
+        	});
+
+       		$(document).on('click', '#GuardarNombre', function() {
+            	$('#ModalAgregarCrear').modal('show');
+        	});
+
+			
+            $('#agregar_nombres').click(function (e) { 
+                $('#ModalCrear').hide();
+                $('#ModalAgregarNombre').show();
+            }); 
+            $('#GuardarNombre').click(function (e) { 
+               $('#ModalAgregarNombre').hide();
+               $('#ModalCrear').hide();
+            });  
+
+			// Cerrar
+            $('#cerrar').click(function (e) { 
+                $('#ModalAgregarNombre').hide();
+                $('#ModalCrear').show();
+            }); 
+			$('#cerrarModal3').click(function (e) { 
+				$('#ModalAgregarNombre').show();
+			});
+        });
+    </script>
+</body>
+</html>

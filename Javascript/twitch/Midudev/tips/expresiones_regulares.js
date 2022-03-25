@@ -1,22 +1,4 @@
-// const arr = [1,2,3,4,5]
-// // arr.reduce((total, num) => total + num, 0)
-
-// // scope
-// // map. filter, reduce
-// // variables y funciones
-// // loops
- 
-// const mensaje = 'Hola, soy @esneider'
-// const pattern = /esneider/g
-// pattern.test(mensaje); // true
-// pattern.lastIndex = 0; // si colocal esto el de abajo cambia a true
-// pattern.test(mensaje); // false
-// // favorita 
-// mensaje.match(pattern) != null
-// mensaje.match(pattern) != null
-// mensaje.match(pattern) != null
-
-Math.random().toString(36).slice(2);
+/*Math.random().toString(36).slice(2);
 crypto.randomUUID()
 
 var kvArray = [{clave:1, valor:10},
@@ -28,30 +10,78 @@ var reformattedArray = kvArray.map(function(obj){
    rObj[obj.clave] = obj.valor;
    return rObj;
 });
+console.log(reformattedArray);*/
 
-console.log(reformattedArray);
+/*
+const string = 'This is a JavaScript test ver lol jjireh Lorem ipsum, dolor sit amet consectetur adipisicing elit'
 
-
-
-
-
-
-const adversario = 'Thanos'
-let loki = ''
-
-switch (adversario ){
-    case 'Iron-Man':
-        loki = 'Magneto'
-        break
-    case 'Hulk':
-        loki = 'Thanos'
-        break
-    case 'Thor':
-        loki = 'Thanos'
-        break
-    default: 
-        loki = 'Loki'
-        break   
+function reverse(text) {  
+    return text.split(' ', 4).join('');
 }
+
+reverse(string); */
+
+formDataPermisos = {
+		"GestiondeMaestros.id_permiso":0,
+    "GestiondeMaestros.ver":"on",
+    "GestiondeMaestros.crear":"on",
+    "GestiondeMaestros.actualizar":"on",
+    "GestiondeMaestros.eliminar":"on",
+    "GestiondeMaestros.id_cargo":0,
+    "Maestros.id_permiso":0,
+    "Maestros.vher":"on",
+    "Maestros.crear":"on",
+    "Maestros.actualizar":"on",
+    "Maestros.eliminar":"on",
+    "Maestros.id_cargo":1,
+    "Configurardías.id_permiso":0,
+    "Configurardías.ver":"on",
+    "Configurardías.crear":"on",
+    "Configurardías.actualizar":"on",
+    "Configurardías.eliminar":"on",
+    "Configurardías.id_cargo":0,
+    "ConfiguracióndeContratos.id_permiso":0,
+    "ConfiguracióndeContratos.id_cargo":0,
+    "ConfigurarOpciones.id_permiso":0,
+    "ConfigurarOpciones.id_cargo":0
+}
+
+let datos = {}
+let datosInterno = {};
+let papa='';
+let contador=0
+for (const propiedad in formDataPermisos) {
+  contador+=1;
+  const element = formDataPermisos[propiedad]
+  let valor = propiedad.replace(/[é]/g, "e").replace(/[í]/g, "i").replace(/[ó]/g, "o").substring(0, propiedad.indexOf('.'));
+	let valor2 = propiedad.substring(propiedad.length, propiedad.indexOf('.') + 1);
+  //valor2 == 'id_cargo' ? delete formDataPermisos.propiedad : '';
+  datosInterno.id_empleado = '1';
+  if(datos[papa] === undefined && papa==''){
+    papa=valor;
+    datosInterno={};
+    datosInterno[valor2] = element;
+    delete datosInterno.id_cargo;
+  }else if(datos[papa] === undefined && papa!=valor){
+    datos[papa]=datosInterno;
+    papa=valor;
+    datosInterno={};
+    datosInterno[valor2] = element;
+    delete datosInterno.id_cargo;
+  }else{
+  	datosInterno[valor2] = element;
+    if(contador==Object.keys(formDataPermisos).length){
+      datos[papa]=datosInterno;
+      delete datosInterno.id_cargo;
+    }
+  }
+}
+console.log(datos)
+
+
+
+
+
+
 
 

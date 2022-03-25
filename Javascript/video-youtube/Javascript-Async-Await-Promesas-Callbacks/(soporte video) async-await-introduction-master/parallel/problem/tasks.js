@@ -4,7 +4,7 @@ const sleep = util.promisify(setTimeout);
 module.exports = {
 
   async taskOne () {
-    throw Error('SOME PROBLEM');
+    //throw Error('SOME PROBLEM');
     await sleep(4000);
     return 'ONE VALUE';
   },

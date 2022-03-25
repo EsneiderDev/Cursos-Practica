@@ -1,8 +1,8 @@
+
 /* ======================================================================
-				TIEMPO RELATIVO EN DIFERENTES IDIOMAS ...sin dependencias y desde cero
-        ====================================================================== */
-        
-        
+	 TIEMPO RELATIVO EN DIFERENTES IDIOMAS ...sin dependencias y desde cero
+   ====================================================================== */
+
         /*Creamos una constante con todas las unidades de tiempo en segundos*/
         const DATE_UNITS = {
           day:  86400,
@@ -39,9 +39,9 @@
           return rtf.format( value, unit )														 //     creamos 
         }
         
-        console.log( timeAgo(1645113421406) );
+        console.log( timeAgo(1645114088929) );
         // --> hace 160 días
-        console.log( timeAgo(1645113421406, 'en'));
+        console.log( timeAgo(1645114088929, 'en'));
         // --> 160 days ago
 
         /* ¿Qué es el tiempo timestamp? 

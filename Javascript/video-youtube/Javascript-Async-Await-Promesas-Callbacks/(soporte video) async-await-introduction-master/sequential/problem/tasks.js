@@ -5,7 +5,7 @@ module.exports = {
 
   async taskOne () {
     throw Error('SOME PROBLEM');
-    await sleep(4000);
+    await sleep(4000); 
     return 'ONE VALUE';
   },
 

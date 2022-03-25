@@ -52,7 +52,7 @@ colores.forEach( function (colores, index) {
     console.log(`indice: ${index}` +" => "+colores[0]); // tomar primera letra
 });
 
-/* 
+ 
 console.log('\n------------ Map ---------------------\n');
 //3 forma
 
@@ -67,4 +67,3 @@ dias = [
 dias.map(function(dias) {
     console.log(dias.nro+" => "+dias.dia+" => "+dias.mes);
 });
- */

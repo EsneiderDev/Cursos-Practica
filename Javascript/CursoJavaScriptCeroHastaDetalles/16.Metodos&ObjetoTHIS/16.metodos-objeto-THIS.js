@@ -90,7 +90,7 @@ persona3.imprimirNombre3(); // Andres
 
 // ----------------- ESTANDAR Y FLECHA DIFERENCIAS: IMPRIMIR VALORES DENTRE DEL CONTEXTO DEL OBJETO "persona4" DE FORMA INTERTA Y NO DEL OBJETO GLOBAL (THIS) -----------------
 console.log('\n PERSONA 4  \n '+"Imprimir nombre del contexto y no del objeto globla \n ");
-/* 
+
 var persona4 = {
     nombre: "M",
     apellido: "O",
@@ -105,11 +105,12 @@ var persona4 = {
         console.log( this ); // con la funcion de flacha hace referencia al objeto global
     }
 }
+
 console.log( 'Tradicional: apunta al contexto: ');
 persona4.imprimirNombre4();  //  {nombre: 'M', apellido: 'O', imprimirNombre4: ƒ, imprimirApellido: ƒ}
 console.log( 'fecha: apunta al objeto globla: ');
 persona4.imprimirApellido(); //   Window {window: Window, self: Window, document: document, name: '', location: Location, …}
- */
+ 
 
 // ----------------- ESTANDAR Y FLECHA: IMPRIMIR VALORES DENTRE DEL CONTEXTO DEL OBJETO "persona5" DE FORMA INTERTA Y NO DEL OBJETO GLOBAL (THIS) -----------------
 console.log('\n PERSONA 5  \n '+"Imprimir nombre del contexto y no del objeto globla \n ");

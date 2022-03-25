@@ -66,3 +66,6 @@ const propiedades  = Object.getOwnPropertyNames( personaje );
 const valores      = Object.values( personaje );
 console.log(propiedades);  // (8) ['nombre', 'codName', 'vivo', 'coords', 'trajes', 'direccion', 'ultima-perlicula', 'casado']
 console.log( valores );    // (8) ['Tony Stark', 'Ironman', true, {…}, Array(3), {…}, 'Infinity war', true]
+
+
+array

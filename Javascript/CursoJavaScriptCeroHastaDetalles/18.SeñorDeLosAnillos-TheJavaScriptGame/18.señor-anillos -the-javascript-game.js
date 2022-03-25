@@ -1,8 +1,8 @@
-function Jugadores(nombre) 
+ function Jugadores(nombre) 
 {
     this.nombre = nombre;
     this.pv     = 100; // puntos de vida
-    this.sp     = 100; // magis o special poin
+    this.sp     = 100; // magis o special point
 
     this.curar = function ( jugadorObjetivo ) {  
 

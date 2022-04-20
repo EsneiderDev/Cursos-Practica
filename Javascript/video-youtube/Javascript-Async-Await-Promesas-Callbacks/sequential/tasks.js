@@ -15,7 +15,7 @@ module.exports = {
 
     async taskTwo(){
         try {
-            throw new Error('SOME PROBLEM');
+            /* throw new Error('SOME PROBLEM'); */
             await sleep(2000);
             return 'TWO VALUE';
         } catch (error) {

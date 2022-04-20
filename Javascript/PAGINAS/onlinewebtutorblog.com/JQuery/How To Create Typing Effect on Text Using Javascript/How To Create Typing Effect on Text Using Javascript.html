@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Typing Effect on Text Using Javascript</title>
+</head>
+
+<body>
+
+    <h4>Typing Effect on Text Using Javascript</h4>
+
+    <button onclick="typeMyText()">Type Text</button>
+
+    <p id="type-text"></p>
+
+    <script>
+        var i = 0;
+        var txt = 'Welcome To Online Web Tutor Programming World.';
+        var speed = 120;
+
+        function typeMyText() {
+            if (i < txt.length) {
+                document.getElementById("type-text").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeMyText, speed);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

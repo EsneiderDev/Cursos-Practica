@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Socket IO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <!-- <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+html {
+  overflow: hidden;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: #354b52;
+  color: #ffffff;
+  overflow: hidden;
+}
+input {
+  padding: 10px;
+  font-size: 14px;
+}
+.chat {
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+  font-size: 14px;
+  overflow-y: auto;
+  border: 1px solid #dddddd;
+  background: #000000;
+  color: #ffffff;
+  resize: none !important;
+}
+.infoInput {
+  font-size: 11px;
+  position: relative;
+  left: 10px;
+  top: -5px;
+}
+.disabled {
+  pointer-events: none;
+  color: #aaaaaa !important;
+}
+.chatUser {
+  font-weight: bold;
+  margin-right: 5px;
+}
+::placeholder {
+  color: #ffffff !important;
+  opacity: .3 !important;
+}
+.chat::-webkit-scrollbar,
+#userConnected::-webkit-scrollbar,
+.tabs ul::-webkit-scrollbar {
+  width: 10px;
+}
+.chat::-webkit-scrollbar-track,
+#userConnected::-webkit-scrollbar-track,
+.tabs ul::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.chat::-webkit-scrollbar-thumb,
+#userConnected::-webkit-scrollbar-thumb,
+.tabs ul::-webkit-scrollbar-thumb {
+  background: #777777;       
+  border-radius: 3px;
+}
+.chat::-webkit-scrollbar-thumb:hover,
+#userConnected::-webkit-scrollbar-thumb:hover,
+.tabs ul::-webkit-scrollbar-thumb:hover {
+  background: #ffffff; 
+  cursor: pointer;
+}
+.tabs ul {
+  border-bottom: 0 !important;
+  font-size: 14px;
+  overflow: auto;
+}
+.tabs.is-boxed a:hover, .active {
+  background-color: #000000;
+  border: 1px solid #ffffff;
+}
+.containerChats .infoInput {
+  text-align: right;
+  left: 0;
+  top: 0px;
+  height: 15px;
+}
+.hide {
+  display: none;
+}
+.card {
+  border: 1px solid #dddddd;
+  max-height: 343px;
+  height: 343px;
+}
+.notification {
+  transition: 300ms ease-in-out;
+  position: fixed;
+  bottom: -24px;
+  width: 100%;
+  opacity: 1;
+  z-index: 10;
+}
+.notification.hidden {
+  transition: 300ms ease-in-out;
+  bottom: -100px;
+  opacity: 0;
+  z-index: -1;
+}
+#userConnected {
+  overflow-y: auto;
+  max-height: 225px;
+  height: 225px;
+}
+#userConnected .chatUser {
+  cursor: pointer !important;
+}
+@media (max-width: 768px) {
+  .tabs  {
+    padding-top: 0px !important;
+  }
+}
+.newMessage {
+  font-size: 11px;
+  left: 5px;
+  position: relative;
+  color: #2196F3;
+}
+.closeChat {
+  position: relative;
+  left: 12px;
+  top: -11px;
+  color: #d46a10;
+  font-size: 10px;
+}
+@media all and (max-width: 1023px) {
+  .container {
+    max-width: 960px;
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+  }
+}
+progress {
+  width: 100%;
+  position: relative;
+  bottom: 25px;
+  transition: 200ms ease-in-out;
+  opacity: 1;
+}
+.info-progress {
+  font-size: 11px;
+  text-align: right;
+  width: 100%;
+  bottom: 30px;
+  position: relative;
+}
+.hidden {
+  opacity: 0;
+  transition: 200ms ease-in-out;
+}
+    </style> -->
+</head>
+<body >
+    <div class="notification hidden">
+        <p></p>
+    </div>
+
+    <CENTER><h1>Chats With Socket.io</h1></CENTER>
+    <div id="chat-container">
+        <div id="chat-window"> 
+            <div id="output"></div>
+            <div id="actions">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <input type="text" name="" id="username" placeholder="Username">
+        <input type="text" name="" id="message" placeholder="Message" > <!-- onkeyup="myFunction()" -->
+        <button id="send">Send</button>
+    </div>
+
+    <div id="live-chat">
+    
+        <header class="clearfix">
+          <a href="#" class="chat-close">x</a>
+          <h4>Mehmet Mert</h4>
+          <!-- <span class="chat-message-counter">3</span> -->
+        </header>
+    
+        <div class="chat">
+          
+          <div class="chat-history" id="chat-history">
+            
+          </div> <!-- end chat-history -->
+          <p class="chat-feedback" id="chat-feedback"></p>
+          <form >
+            <fieldset>
+              <input type="text" id="message2" placeholder="Escribe un mensaje" autofocus>
+              <input id="send2" type="hidden" >
+            </fieldset>
+          </form>
+        </div> <!-- end chat -->
+    
+    </div> <!-- end live-chat -->
+    <input type="file" id="file" accept="image/*" onchange="mostrar()"/>
+    <br>
+    <img id="img"/>
+
+    <!-- OTRO CHAT CON OTRO CODIGO -->
+
+    <!-- <div class="notification hidden">
+        <p></p>
+    </div>
+    <div class="container">
+        <div class="columns">
+          <div class="column is-one-quarter mt-6">
+            <div class="card  has-background-black">
+              <div class="card-content">
+                <div class="media mb-0">
+                  <div class="media-content">
+                    <p class="title is-6 has-text-white">Usuarios conectados</p>
+                    <hr>
+                  </div>
+                </div>
+                <div class="content has-text-white" id="userConnected">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="tabs is-boxed pt-6 mb-0">
+              <ul>
+                <li id="tabGeneral" data-content="chatGeneral">
+                  <a class="active">
+                    <span class="has-text-white">General</span>
+                    <i class="fas fa-comment newMessage hide"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="columns">
+              <div class="column containerChats pb-0">
+                <div id="chatGeneral" class="chat textarea contentTab"></div>
+                <div class="infoInput"></div>
+              </div>
+            </div>
+            <div class="columns is-mobile">
+              <div class="column is-one-quarter pr-0 pt-1">
+                <input class="input has-text-white has-background-black" type="text" id="user" placeholder="Usuario">
+              </div>
+              <div class="column ml-1 mt-1 mr-3">
+                <div class="columns is-mobile">
+                  <input class="input has-text-white has-background-black" type="text" id="message" placeholder="Mensaje" title="Subir fichero">
+                  <form>
+                    <button class="button is-info" id="btnUploadFile">
+                      <i class="fas fa-file-upload"></i>
+                      <input class="file-input" type="file" name="uploadFile" accept="image/x-png,image/gif,image/jpeg">
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-mobile hidden" id="containerProgress">
+              <div class="column">
+                <progress id="upload-progress-bar" max="100" value="0">0</progress>
+                <div class="info-progress" />
+              </div>
+            </div>
+          </div>
+        </div>
+    </div> -->
+
+    <script src="./js/push.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> 
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script src="chat.js" charset="utf-8"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+      
+     -->
+
+     <script type="text/javascript">
+        (function() {
+            $('#live-chat header').on('click', function() {
+                $('.chat').slideToggle(300, 'swing');
+                $('.chat-message-counter').fadeToggle(300, 'swing')
+            });  
+            
+        }) ();
+    </script>
+</body>
+</html>

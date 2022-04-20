@@ -1,0 +1,82 @@
+https://www.youtube.com/watch?v=ZpY5KdGQvwI&ab_channel=midudev
+
+npm init -y  <-- Ejecutar el package.json
+
+npm install typescript -D <-- La D en mayuscula(Dependencia. de desarrollo)
+
+
+"scripts": {
+    "tsc": "tsc",  //<-- Se agrega el vinario de "tsc" para transformar los ficheros de Javascript a TypeScript
+    "test": "echo \"Error: no test specified\" && exit 1"
+},
+
+npm run tsc -- --init   //Terminar <--  -- -- es para que corra en el tsc y no en npm install
+
+
+// Configuracionde tsconfig 
+
+"target": "es2015",                 // <-- Copila en ECMA 2015. 
+"module": "commonjs",               // <-- Los required, los modulos type, modulos. 
+"outDir": "./build",                // <-- Dejara los archivos compilados.
+"strict": true,                     // Checkeos true estrictos por defectos, debajo hay mas. 
+"noUnusedLocals": true,             // Si tiene alguna variable sin utilizar, esto lo hace el linter pero aqui lo usa este.
+"noUnusedParameters": true,         // Parametros que no utilizamos.          
+"exactOptionalPropertyTypes": true, // Siempre nuestras funciones deben tener un return, si tienes undefined debes colocar un return, colocarlo a mano.
+"noImplicitReturns": true,          // <-- en todos los switch debes colocar un return. para evitar donde no debe caer en un brack. 
+--
+// "noImplicitAny": true,           // <-- Este es super problematico 🤪, mejor lo dejamos así
+
+
+
+//  PARA CREAR API USAMOS EXPRESS
+npm install express -E      // <-- La "E" para guardar la version exacta. 
+-- Explicación: La guarda sin el cared(^), es una dependencia exacta. 
+"devDependencies": {
+  "typescript": "^4.6.3"
+},
+"dependencies": {
+  "express": "4.17.3"
+}
+
+
+// EN desarrollo ((https://fullstackopen.com/es/part9))
+npm install @types/express -D // <-- esto es para evitar los errores por los tipos en los paquetes, instalamos este
+
+
+// Correr
+npm run tsc  // <-- Para correr y compilar, Crea la carpeta build que hemos configurado en tsconfig
+
+http://localhost:3000/
+
+// Agregar en package.json
+"start": "node build/index.js",
+
+correr npm start
+http://localhost:3000/ping
+
+// Una mezcla entre ts-Node que hace la conversion de Typescript a Javascript para node  y nodemon
+npm install ts-node-dev -D
+
+
+"dev": "ts-node-dev src/index.ts", // <--  Esta dependencia lo que va hacer es levantar, ejecutar y compilar y va a estar ejecutando los cambios para 
+                                           volver hacer la compilación
+
+( 18:00 )
+// Vamos A Tener Dos EnPoint
+
+http://localhost:3000/api/diaries
+
+(23) Agregamos para que tome el JSon de diaries. 
+"resolveJsonModule": true,
+
+
+(37)
+npm install ts-standard -D
+
+//agregamos un script 
+"lint": "ts-standard",
+
+//ejecutamos en la terminal
+npm run lint
+
+

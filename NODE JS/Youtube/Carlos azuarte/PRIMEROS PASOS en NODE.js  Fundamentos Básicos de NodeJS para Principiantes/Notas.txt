@@ -1,0 +1,21 @@
+// lIN Video: https://youtu.be/zBdojhZ2_Qg
+// pagina: https://nodeschool.io/
+
+// Intalar
+npm install -g learnyounode (Terminal)
+
+// Ejecutar 
+learnyounode (Terminal)
+
+// TOMAMOS EL PRIMER EJERCICIO
+// PARA CHECKEAR QUE EL ELERCICIO ESTE BIEN EJECUTAMOS 
+learnyounode verify hello-world.js (Terminal)
+
+primer Ejercicio 
+» HELLO WORLD                                                 [COMPLETED]
+
+2do Ejercicio
+// Creamos
+baby-steps.js 
+// Ejecutamos
+node baby-steps.js 1 2 3 4

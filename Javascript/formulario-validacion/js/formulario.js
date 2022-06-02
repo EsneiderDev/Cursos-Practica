@@ -128,6 +128,7 @@ formulario.addEventListener('submit', ( e ) => {
 function preventDef(event) {
     event.preventDefault();
 }
+
 /* 
 function agregarManipulacion() {
     document.getElementById("checkbox").addEventListener("click", 

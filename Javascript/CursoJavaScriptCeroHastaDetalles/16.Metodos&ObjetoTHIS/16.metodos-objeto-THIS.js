@@ -67,7 +67,7 @@ var persona3 = {
     nombre: "M",
     apellido: "O",
     imprimirNombre3: function(){
-        console.log(nombre);
+        console.log(nombre); // si le colocamos this.nombre imprime "M", solo nombre imprime Andres(variable global)
     }
 }
 

@@ -14,35 +14,43 @@ let b ='';
 const c = '';
 
 // ❌ No uses ni abuses de las funciones inpuras: "Son aquella que cada vez que las llamas puede devolverte algo diferente porque depende de cosas externas".
-const STOP_WORDS = ['a', 'and', 'the'];
-let inputSearch = 'The new Iphone o';
+const STOP_WORDS = ['a', 'and', 'the', 'or']
+let inputSearch = 'The new iPhone or a new clone'
+// slugify es una función impura
 const slugify = () => inputSearch
-        .split(' ')
-        .map(n => n.toLowerCase())
-        .filter( n => !STOP_WORDS.includes( n ))
-        .join('-');
+    .split(' ')
+  	.map(n => n.toLowerCase())
+    .filter(n => !STOP_WORDS.includes(n))
+    .join('-')
 
 slugify()
 // ✅ Mucho mejor si usas una funcion pura y parametrizable
-const slugify_2 = ({ input, stopWords }) => {
-    return input.split(' ')
-                .map(n => n.toLowerCase())
-                .filter( n => !stopWords.includes(n))
-                .join('-');
+const slugify_2 = ({input, stopWords }) => {
+    return input
+      .split(' ')
+        .map(n => n.toLowerCase())
+      .filter(n => !stopWords.includes(n))
+      .join('-')
 }
+// Ahora es más extensible, fácil de hacer tests
+// y de reutilizares en otros proyectos
+slugify({ input: 'The new iPhone or a new clone', stopWords: STOP_WORDS })
+
 
 // ❌ No uses los comentarios para explicar el codigo
 // La variable a es la edad, revisamos
-// que sea mayor a 18
-if( a > 18 ){
-    // si es mayor a 18, entonces
-    // Entramos aquí
+// que sea mayor de 18
+if (a > 18) {
+    // Si es mayor de 18, entonces
+    // entramos aquí
 }
-// ✅ Los tienes que usar para explicar el porque
-// [JIRA-3618]: Los usuarios menores de 18
+// [JIRA-3618]: Los usuarios menores de edad
 // son redirigidos a la página de acceso
-// hasta que habilitemos los filtros
-if( age > 18 ){ //#... }
+// hasta que habilitemos los filtros necesarios
+if (age > 18) { //... }
+
+
+
 
 // ❌ A la hora de hacer conversion de tipos evita utilizar estos operadores 
 const number = 0;

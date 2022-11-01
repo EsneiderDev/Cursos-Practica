@@ -1,6 +1,16 @@
-// Primera pregunta 
+//************************!  1. ¿Qué sig que javascript sea un lenguaje dinamico? ************************
+// Dinamico y de tipado debil, no tiene tipado. puedes cambiar los tipos de las variables en tiempo de ejecucion.
+let text = 'Hola mundo';
+text = 2;
+console.log( typeof text );
+// Nota: Ejemplo -> Python es un lenguaje dinamico pero de tipado fuerte
 
-const text = 'Hola'
+const isDefined = true || null;
+// console.log( isDefined );
+
+// Esto es lo malo.
+const text2 = 'hola';
+console.log( text2+2 );
 
 /* 
 //************************!  2. Tipos de datos en js ************************

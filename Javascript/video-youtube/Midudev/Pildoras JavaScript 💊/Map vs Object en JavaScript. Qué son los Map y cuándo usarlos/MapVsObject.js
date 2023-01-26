@@ -63,5 +63,12 @@ const persona2 = {
     age: 25,
     email: 'example@example.com'
 }
-delete persona2.name; // Nota: Esto es el mal, tiene problema con la complicacion del javascript en el navegador.
-console.log( Object.keys(persona2).length ); // 2
+
+//delete persona2.name; // Nota: Esto es el mal, tiene problema con la complicacion del javascript en el navegador.
+//-- Para evitar el delete puedes hacer esto
+persona2.name = undefined;
+console.log( Object.keys(persona2).length ); // Undefined es un valor. 
+
+//-- En cambio con deleted en MAP --
+
+

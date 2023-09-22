@@ -1,0 +1,2 @@
+
+correr con: node ./sockets/server.js

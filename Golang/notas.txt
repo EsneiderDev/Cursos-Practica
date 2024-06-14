@@ -1,0 +1,17 @@
+# Instala las dependencias necesarias
+sudo apt-get update
+sudo apt-get install curl git mercurial make binutils bison gcc build-essential
+
+# Instala GVM
+bash < <(curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+source ~/.gvm/scripts/gvm 
+nota: en mi pc es source /home/esneider/.gvm/scripts/gvm (el comando lo genero el ultimo comando)
+
+# Instala una versión específica de Go
+gvm install go1.20
+
+# Usa la versión instalada de Go
+gvm use go1.20 --default
+
+# Verifica la versión de Go
+go version

@@ -1,0 +1,9 @@
+https://www.youtube.com/watch?v=Du3RTGZV_ek&t=301s&ab_channel=GoSimplified
+INICIO: 2024-06-07
+
+Tools:
+go install golang.org/x/tools/gopls@latest <- esta no se instalo
+
+- go mod init go-app <-- tambien puedes colocarle el repositorio o la ruta.
+- go run main.go <- corre- 
+- go build . <-- complila a lenguaje maquina y crea "go-app" para ejecutar "./go-app" y genera el mismo resultado

@@ -1,0 +1,6 @@
+
+// comando: go mod init hello
+output:
+go: creating new go.mod: module hello
+go: to add module requirements and sums:
+        go mod tidy

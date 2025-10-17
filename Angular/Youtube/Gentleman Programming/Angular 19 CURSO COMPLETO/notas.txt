@@ -1,0 +1,269 @@
+
+
+
+Detección de cambios: 
+    - ZoneJs => Archivo => detectar cambios => es muy fe(Burbujeo en toda la aplicación).
+    - ChangeDetectionStrategy² => OnPush => Solo detecta cambios en ses componente, 
+        3 cosas que hacia el cambio en el componente: 
+            Entradas: Parametros de cambios:
+            Asincronia: cualquier operación asincrona como llamar un endpoint, recibir eventos de observables.
+            interacción del usuario.
+
+    ° Se va ZoneJs y enytra Signal
+    - Signals => QwickJs(empresa del creador de Angular) => dio mucho marketing al concepto de signals => resumeability (renderizado direfente)
+        Viene a cambiar el concepto de 🌐 SSR (Server-Side Rendering) - Renderizado en el Servidor y SSG (Static Site Generation) - Generación Estática
+    
+    - RESUMABLITY ³
+        Server  => HTML + Json => Buton -> ID: script (Nunca se necesita un segundo javascript)
+        HTML, {}
+
+Reactive Programming: => RxJs
+    - Caneles => un canal es un tubo con agujeros
+    - espectadores => van a mirar a travéz de esos agujeros 
+    - Eventos => se pasa un objeto por el tubo
+
+Cada espectador es humano, cada persona es un mundo, cada uno ve lo que quiere.
+
+
+Segnal⁵ => Canales = Segnal son muestros canales
+    - 1 => Alguein tiene que mandar el evento.
+    - 2 => Alguien tiene que recibir el evento.
+
+RxJs⁴ => Tiene una biblioteca que maneja observables
+    - Observables => Tubo que solo uno puede mandar una pelota | UNIDIRECIONAL.
+    - Subject => Tubo donde todos pueden mandar una pelota | BIDIRECCIONAL.
+    - BehaviorSubject => TUbo donde todos pueden mandar una pelota, PERO siempre queda la ultima pelota guardada.
+
+SERVIDOR => LA INFORMACION AL BROWSER => cache de la interaccion.
+Se aplica el SSR pero el SERVIDOR va a enviar la INFORMACION al navegadorva hascer un cache de las interacciones.
+No es interactuable => hidrata
+entre el tiempo que la pagina no sea INTERACTUABLE y en el momento que la pagina se HIDRATE
+
+Partial Rendering
+Te mando todo el HTML pero solo se hidratan las que necesita.
+
+
+
+=== 2. CHATGPT===
+La detección de cambios en Angular es el proceso mediante el cual el framework actualiza la vista (DOM) en respuesta a cambios en los datos del componente.
+🔍 ¿Cómo funciona?
+Cada vez que Angular detecta un cambio en el estado de la aplicación (ya sea porque el usuario interactúa con la UI o porque cambian los datos en el modelo), ejecuta un ciclo de detección de cambios para asegurarse de que la vista refleje los valores más recientes.
+⚙️ Mecanismos clave:
+Zona.js:
+Intercepta eventos asíncronos como clics, setTimeout, HTTP requests y notifica a Angular para que revise los cambios.
+
+Ciclo de vida de la detección de cambios:
+Se ejecuta en cada componente y verifica si hay cambios en sus datos.
+Si hay cambios, actualiza la vista.
+
+Estrategias de detección de cambios(²):
+Default: Angular revisa todos los componentes cada vez que ocurre un cambio.
+OnPush: Solo detecta cambios si los @Input del componente cambian, útil para mejorar rendimiento.
+===END CHATGPT===
+
+=== 3. CHATGPT ===
+🚀 ¿Qué es Resumability en Desarrollo Web?
+Resumability es un concepto en el desarrollo web que permite que una aplicación web se reanude en el cliente sin necesidad de volver a ejecutar todo el código desde cero. Es una optimización utilizada en frameworks modernos como Qwik para mejorar el rendimiento y la experiencia del usuario.
+
+🔥 ¿Cómo funciona Resumability?
+En aplicaciones tradicionales con Hydration (como React o Angular), cuando una página renderizada en el servidor (SSR) llega al navegador, este necesita re-hidratarla, lo que significa:
+
+1️⃣ Descargar el código de JavaScript.
+2️⃣ Volver a ejecutar y reconstruir el estado en el cliente.
+3️⃣ Enlazar los eventos nuevamente.
+
+Este proceso puede ser lento y costoso en términos de rendimiento.
+
+🔹 Resumability resuelve esto evitando la necesidad de "re-hidratar" la aplicación completamente. En su lugar:
+
+✅ El servidor serializa el estado y los eventos en el HTML.
+✅ El cliente reanuda la ejecución justo donde se necesita, sin sobrecarga.
+✅ Se minimiza el JavaScript que se ejecuta en el navegador.
+
+🚀 Diferencia entre Hydration vs. Resumability
+🛠️ Característica	     Hydration (React, Angular, Vue)	        Resumability (Qwik)
+ Carga Inicial	         Reejecuta toda la app en el cliente	    No ejecuta nada extra en el cliente
+ Estado	                 Debe reconstruirse en el cliente	        Se mantiene desde el servidor
+ Eventos	             Se vuelven a adjuntar en el cliente	    Se enlazan automáticamente sin código extra
+ Performance	         Más pesado y lento	                        Más rápido y eficiente
+ 
+🛠 Ejemplo con Qwik (Resumability en acción)
+tsx Copiar Editar
+import { component$, useSignal } from '@builder.io/qwik';
+
+export default component$(() => {
+  const count = useSignal(0);
+
+  return (
+    <button onClick$={() => count.value++}>
+      Clicks: {count.value}
+    </button>
+  );
+});
+✅ Qwik solo ejecuta el código cuando es necesario.
+✅ Los eventos y estados se mantienen sin rehidratación.
+
+🎯 Beneficios de Resumability
+✔ Carga inicial ultrarrápida 🚀
+✔ Menos JavaScript en el cliente
+✔ Optimización para Core Web Vitals (LCP, FID, CLS)
+✔ Mejor experiencia en dispositivos con poca potencia
+
+🔹 Frameworks como Qwik y Partytown están liderando esta optimización para la web del futuro.
+
+¿Te gustaría probarlo en tu proyecto? 🚀
+=== FIN  ===
+
+
+
+=== 4 CHATGPT ====
+🚀 ¿Qué es la Programación Reactiva? (Reactive Programming)
+La Programación Reactiva es un paradigma basado en la propagación de cambios y el manejo de flujos de datos asíncronos. Se centra en reaccionar automáticamente a cambios en los datos sin necesidad de controlar cada paso de actualización manualmente.
+
+🔄 Concepto Clave: Flujos de Datos y Reacciones
+En la programación tradicional, las variables tienen valores estáticos hasta que se reasignan.
+En la programación reactiva, las variables pueden reaccionar a cambios en otros valores automáticamente.
+
+📌 Ejemplo conceptual:
+
+Imperativo (Tradicional)
+
+javascript
+Copiar
+Editar
+let a = 5;
+let b = a * 2;
+console.log(b); // 10
+a = 10;
+console.log(b); // ❌ Sigue siendo 10
+Aquí b no se actualiza automáticamente cuando a cambia.
+
+Reactivo
+
+javascript
+Copiar
+Editar
+import { BehaviorSubject } from 'rxjs';
+
+const a = new BehaviorSubject(5);
+const b = a.asObservable().subscribe(val => console.log(val * 2));
+
+a.next(10); // ✅ Automáticamente imprime: 20
+Aquí b reacciona a los cambios de a automáticamente.
+
+🔥 ¿Dónde se usa la Programación Reactiva?
+La programación reactiva es clave en: ✅ Interfaces de usuario dinámicas (Angular con RxJS, React con hooks).
+✅ Flujos de datos en tiempo real (Streaming, WebSockets, APIs en tiempo real).
+✅ Procesamiento de eventos (Juegos, sensores, sistemas IoT).
+✅ Manejo de concurrencia (Backends con programación reactiva como Spring WebFlux).
+
+⚡ Principales Tecnologías y Librerías
+🔹 RxJS (Reactive Extensions for JavaScript) → Angular
+🔹 Recoil / Redux con Observables → React
+🔹 Spring WebFlux → Java
+🔹 Akka Streams → Scala
+🔹 Flutter Streams (Dart) → Aplicaciones móviles
+
+🛠 Ejemplo con RxJS en Angular
+typescript
+Copiar
+Editar
+import { Component } from '@angular/core';
+import { interval } from 'rxjs';
+
+@Component({
+  selector: 'app-root',
+  template: `<p>{{ value }}</p>`
+})
+export class AppComponent {
+  value: number = 0;
+
+  ngOnInit() {
+    interval(1000).subscribe(val => this.value = val);
+  }
+}
+✅ Cada segundo el valor cambia automáticamente. 🚀
+
+🏆 Beneficios de la Programación Reactiva
+✔ Menos manejo manual del estado.
+✔ Mejor rendimiento en aplicaciones asíncronas.
+✔ Facilita la gestión de eventos y streams de datos.
+✔ Escalabilidad y mejor manejo de concurrencia.
+
+💡 Conclusión:
+La Programación Reactiva simplifica el manejo de eventos asíncronos y flujos de datos, permitiendo aplicaciones más eficientes y fáciles de mantener. 🚀
+
+=== FIN 4 CHATGPT ===
+
+
+
+=== 5 CHATGPT === 
+🚀 ¿Qué son los Signals en Desarrollo Web?
+Los Signals son una nueva forma de manejar el estado reactivo en frameworks modernos como Qwik, Angular (v16+) y SolidJS.
+
+A diferencia de soluciones tradicionales como useState (React) o RxJS (Angular), los Signals son más eficientes porque evitan renderizados innecesarios y hacen que la actualización del estado sea más predecible y rápida.
+
+🔥 ¿Cómo funcionan los Signals?
+1️⃣ Son valores reactivos que pueden cambiar con el tiempo.
+2️⃣ Notifican automáticamente a los componentes que los usan cuando cambian.
+3️⃣ Minimizan los renderizados innecesarios optimizando el rendimiento.
+
+📌 Ejemplo de Signals en Angular:
+
+typescript
+Copiar
+Editar
+import { Component, signal } from '@angular/core';
+
+@Component({
+  selector: 'app-contador',
+  template: `<button (click)="increment()">Clicks: {{ count() }}</button>`,
+})
+export class ContadorComponent {
+  count = signal(0); // Signal que almacena el estado
+
+  increment() {
+    this.count.set(this.count() + 1); // Actualiza el valor del Signal
+  }
+}
+✅ No necesita un ciclo de detección de cambios (Change Detection).
+✅ Solo se actualiza la parte del DOM que usa el signal.
+✅ Evita re-renderizar todo el componente.
+
+🛠 Signals en Qwik
+tsx
+Copiar
+Editar
+import { component$, useSignal } from '@builder.io/qwik';
+
+export default component$(() => {
+  const count = useSignal(0);
+
+  return (
+    <button onClick$={() => count.value++}>
+      Clicks: {count.value}
+    </button>
+  );
+});
+📌 En Qwik, los Signals permiten Resumability, optimizando aún más la carga inicial.
+
+🎯 Diferencias entre Signals y useState (React)
+🛠️ Característica	Signals (Angular, Qwik, SolidJS)	useState (React)
+Reactividad	Reactivo sin re-renderizar el componente	Re-renderiza el componente completo
+Performance	Solo actualiza el valor que cambia	Puede afectar la UI completa
+Complejidad	Más simple y directo	Necesita memoización y optimizaciones
+Uso en SSR	Más eficiente (ej. Qwik)	Puede ser más costoso
+🎯 Ventajas de Signals
+✔ Más rendimiento 🚀
+✔ Menos re-renderizados innecesarios
+✔ Código más limpio y predecible
+✔ Mejor integración con SSR y Resumability
+
+=== FIN 5 CHATGPT ===
+
+si no tienes el CLI:
+npm install -g @angular/cli@19
+
+instalamos Bun: https://bun.sh/
+
+ng config -g cli.packageManager bun

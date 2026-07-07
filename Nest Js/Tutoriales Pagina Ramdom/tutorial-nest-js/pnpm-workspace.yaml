@@ -1,0 +1,5 @@
+allowBuilds:
+  '@compodoc/compodoc': false
+  '@nestjs/core': true
+  '@scarf/scarf': false
+  unrs-resolver: true

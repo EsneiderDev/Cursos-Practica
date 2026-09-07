@@ -1,0 +1,26 @@
+<p>Lista de paises</p>
+@if(cargando()){
+    <p> Cargando paises...</p>
+}
+@if(error()){
+    <p class="error"> {{ error() }}</p>
+}
+@if(!cargando() && !error()){
+    <div class="grid">
+        @for(pais of paises(); track pais.names.common){
+            <div class="card">
+                 <img [src]="pais.flag.url_png"
+                      [alt]="pais.names.common"/>
+                 <h3> {{ pais.names.common }} </h3>
+                 <p>
+                    <strong> Capital:</strong>
+                    {{ pais.capitals?.[0]?.name }}
+                 </p>
+                 <p>
+                    <strong>Población:</strong>
+                    {{ pais.population }}
+                 </p>
+            </div>
+        }
+    </div>
+}
